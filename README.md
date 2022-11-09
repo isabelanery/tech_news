@@ -502,6 +502,36 @@ Agora que sabemos pegar páginas HTML, e descobrir o link de notícias, é hora 
 
 📌 **É bom saber que** ao fazer scraping na vida real, você está sempre "refém" de quem construiu o site. Por exemplo, pode ser que nem toda notícia tenha **exatamente** o mesmo HTML/CSS e você precise de criatividade para contornar isso. 
 
+📌 Caso uma tag possua outras tags aninhadas, você pode usar o seletor _*_ para obter informações da tag ancestral e também de suas tags descendentes.
+
+<details>
+
+<summary> <strong>Veja um exemplo:</strong> </summary>
+
+
+```html
+<p>
+  Recentemente, a Alemanha fez a
+  <a
+    href="https://www.tecmundo.com.br/mobilidade-urbana-smart-cities/155000-musk-tesla-carros-totalmente-autonomos.htm"
+    rel="noopener noreferrer"
+    target="_blank"
+    >Tesla</a
+  >
+  “pisar no freio” quanto ao uso de termos comerciais relacionados a carros
+  autônomos, mas quem pensa que esse é um sinal de resistência à introdução de
+  novas tecnologias se engana. Isso porque, de acordo o
+  <em>Automotive News Europe</em>, o país está se preparando para se tornar o
+  primeiro do mundo a criar uma ampla estrutura para regulamentar tais
+  veículos de nível 4.
+</p>
+```
+
+Repare que dentro da tag _p_ encontram-se duas outras tags. Esse é um caso onde a tag _p_ é uma ancestral e as tags _a_ e _em_ são as descendentes. Assim, podemos usar o seletor _*_ para fazer refrência à todas essas tags simultaneamente.
+
+
+</details>
+
 <details>
   <summary>
     <b>🤖 O que será verificado pelo avaliador</b>

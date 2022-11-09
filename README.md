@@ -502,7 +502,7 @@ Agora que sabemos pegar páginas HTML, e descobrir o link de notícias, é hora 
 
 📌 **É bom saber que** ao fazer scraping na vida real, você está sempre "refém" de quem construiu o site. Por exemplo, pode ser que nem toda notícia tenha **exatamente** o mesmo HTML/CSS e você precise de criatividade para contornar isso. 
 
-📌 Caso uma tag possua outras tags aninhadas, você pode usar o seletor _*_ para obter informações da tag ancestral e também de suas tags descendentes.
+📌 Caso uma tag possua outras tags aninhadas, você pode usar o seletor ```*``` para obter informações da tag ancestral e também de suas tags descendentes.
 
 <details>
 
@@ -527,7 +527,7 @@ Agora que sabemos pegar páginas HTML, e descobrir o link de notícias, é hora 
 </p>
 ```
 
-Repare que dentro da tag _p_ encontram-se duas outras tags. Esse é um caso onde a tag _p_ é uma ancestral e as tags _a_ e _em_ são as descendentes. Assim, podemos usar o seletor _*_ para fazer refrência à todas essas tags simultaneamente.
+Repare que dentro da tag _p_ encontram-se duas outras tags. Esse é um caso onde a tag _p_ é uma ancestral e as tags _a_ e _em_ são as descendentes. Assim, podemos usar o seletor ```*``` para fazer refrência à todas essas tags simultaneamente.
 
 
 </details>

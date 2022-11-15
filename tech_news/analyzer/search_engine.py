@@ -37,5 +37,7 @@ def search_by_tag(tag):
 def search_by_category(category):
     return [
         (news["title"], news["url"])
-        for news in search_news({"category": {"$regex": category, "$options": "i"}})
+        for news in search_news(
+            {"category": {"$regex": category, "$options": "i"}}
+        )
     ]

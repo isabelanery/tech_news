@@ -54,4 +54,14 @@ def scrape_noticia(html_content: str) -> dict:
 
 # Requisito 5
 def get_tech_news(amount: int):
-    """Seu código deve vir aqui"""
+    url = "https://blog.betrybe.com"
+    tech_news = []
+
+    while len(tech_news) <= amount:
+        raw_data = fetch(url)
+        news_url_list = scrape_novidades(raw_data)
+        tech_news.extend(scrape_noticia(fetch(item)) for item in news_url_list)
+        url = scrape_next_page_link(raw_data)
+
+    create_news(tech_news[:amount])
+    return tech_news[:amount]

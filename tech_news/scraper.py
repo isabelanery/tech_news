@@ -4,10 +4,10 @@ from parsel import Selector
 
 
 # Requisito 1
-def fetch(url):
+def fetch(url: str, wait: int = 3) -> str:
     try:
         response = requests.get(
-            url, headers={"user-agent": "Fake user-agent"}, timeout=3
+            url, headers={"user-agent": "Fake user-agent"}, timeout=wait
         )
         response.raise_for_status()
         sleep(1)
@@ -18,7 +18,7 @@ def fetch(url):
 
 
 # Requisito 2
-def scrape_novidades(html_content):
+def scrape_novidades(html_content: str) -> list:
     return [
                 link.css("a::attr(href)").get()
                 for link in Selector(html_content).css("a.cs-overlay-link")
@@ -26,8 +26,11 @@ def scrape_novidades(html_content):
 
 
 # Requisito 3
-def scrape_next_page_link(html_content):
-    """Seu código deve vir aqui"""
+def scrape_next_page_link(html_content: str) -> str:
+    if next_page := Selector(html_content).css("a.next"):
+        return next_page.css("a::attr(href)").get()
+    else:
+        return None
 
 
 # Requisito 4
